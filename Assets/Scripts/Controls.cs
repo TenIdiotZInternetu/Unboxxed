@@ -81,7 +81,7 @@ namespace PlayerScripts
         /// Invoked when the horizontal axis is moved right, with its value as a parameter
         /// </summary>
         public static event Action<float> MovesRight;
-        
+
         /*----------------------- Unity Callbacks ------------------*/
         
         void Update()
