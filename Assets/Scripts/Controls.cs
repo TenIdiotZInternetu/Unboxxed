@@ -65,22 +65,22 @@ namespace PlayerScripts
         /// <summary>
         /// Invoked when the vertical axis is moved upwards, with its value as a parameter
         /// </summary>
-        public static event EventHandler<float> MovesUp;
+        public static event Action<float> MovesUp;
         
         /// <summary>
         /// Invoked when the vertical axis is moved downwards, with its value as a parameter
         /// </summary>
-        public static event EventHandler<float> MovesDown;
+        public static event Action<float> MovesDown;
         
         /// <summary>
         /// Invoked when the horizontal axis is moved left, with its value as a parameter
         /// </summary>
-        public static event EventHandler<float> MovesLeft;
+        public static event Action<float> MovesLeft;
         
         /// <summary>
         /// Invoked when the horizontal axis is moved right, with its value as a parameter
         /// </summary>
-        public static event EventHandler<float> MovesRight;
+        public static event Action<float> MovesRight;
         
         /*----------------------- Unity Callbacks ------------------*/
         
@@ -106,10 +106,10 @@ namespace PlayerScripts
             if (cancel) Cancel?.Invoke();
             else CancelRelease?.Invoke();
             
-            if (MoveVertical > 0.001f) MovesUp?.Invoke(this, MoveVertical);
-            if (MoveVertical < -0.001f) MovesDown?.Invoke(this, MoveVertical);
-            if (MoveHorizontal < -0.001f) MovesLeft?.Invoke(this, MoveHorizontal);
-            if (MoveHorizontal > 0.001f) MovesRight?.Invoke(this, MoveHorizontal);
+            if (MoveVertical > 0.001f) MovesUp?.Invoke(MoveVertical);
+            if (MoveVertical < -0.001f) MovesDown?.Invoke(MoveVertical);
+            if (MoveHorizontal < -0.001f) MovesLeft?.Invoke(MoveHorizontal);
+            if (MoveHorizontal > 0.001f) MovesRight?.Invoke(MoveHorizontal);
         }
     }
 }
