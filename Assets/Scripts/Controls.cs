@@ -35,12 +35,12 @@ namespace PlayerScripts
         /// <summary>
         /// Invoked when the secondary action button is pressed (L/X)
         /// </summary>
-        public static event Action Action2;
+        public static event Action Jumps;
         
         /// <summary>
         /// Invoked when the secondary action button is pressed (L/X)
         /// </summary>
-        public static event Action Action2Release;
+        public static event Action JumpsRelease;
         
         /// <summary>
         /// Invoked when the submit button is pressed (Enter)
@@ -90,15 +90,15 @@ namespace PlayerScripts
             MoveVertical = Input.GetAxis("Vertical");
             
             bool action1 = Input.GetButton("Fire1");
-            bool action2 = Input.GetButton("Fire2");
+            bool jump = Input.GetButton("Jump");
             bool submit = Input.GetButton("Submit");
             bool cancel = Input.GetButton("Cancel");
             
             if (action1) Action1?.Invoke();
             else Action1Release?.Invoke();
             
-            if (action2) Action2?.Invoke();
-            else Action2Release?.Invoke();
+            if (jump) Jumps?.Invoke();
+            else JumpsRelease?.Invoke();
             
             if (submit) Submit?.Invoke();
             else SubmitRelease?.Invoke();
