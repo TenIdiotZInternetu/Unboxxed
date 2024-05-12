@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 200773166}
   - component: {fileID: 200773165}
   - component: {fileID: 200773164}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,10 +435,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1800235404}
   - component: {fileID: 1800235403}
+  - component: {fileID: 1800235406}
   - component: {fileID: 1800235402}
   - component: {fileID: 1800235405}
-  - component: {fileID: 1800235406}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,9 +461,9 @@ Rigidbody2D:
   m_LinearDrag: 1
   m_AngularDrag: 1
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f01572131ba45964d899f41e4d13a031, type: 2}
   m_Interpolate: 1
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!212 &1800235403
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 1928928596}
   - component: {fileID: 1928928595}
   - component: {fileID: 1928928594}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FloorCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ Transform:
   m_GameObject: {fileID: 1928928592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.523, z: 0}
-  m_LocalScale: {x: 0.99609375, y: 1, z: 1}
+  m_LocalScale: {x: 0.94628906, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1800235404}
