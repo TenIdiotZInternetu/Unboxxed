@@ -1,5 +1,6 @@
 using PlayerScripts;
 using UnityEngine;
+using UnityEngine.XR;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public partial class PlayerController : MonoBehaviour
@@ -23,7 +24,9 @@ public partial class PlayerController : MonoBehaviour
     {
         Transform = transform;
         RigidBody = GetComponent<Rigidbody2D>();
+        
         _currentState = PlayerState.Initialize(this);
+        _currentState.StateChanged += ChangeState;
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public partial class PlayerController : MonoBehaviour
     {
         MoveHorizontal(Controls.MoveHorizontal);
         _currentState.UpdateState();
+        Debug.Log(_currentState);
     }
 
     private void MoveHorizontal(float value)
@@ -40,6 +44,12 @@ public partial class PlayerController : MonoBehaviour
 
     public void Ground(bool isGrounded)
     {
+        if (_currentState is JumpingState) return;
         _currentState = _currentState.ChangeState(PlayerState.Grounded);
+    }
+    
+    public void ChangeState(PlayerState state)
+    {
+        _currentState = state;
     }
 }

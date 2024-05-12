@@ -1,3 +1,4 @@
+using System;
 using PlayerScripts;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public abstract class PlayerState
     
     protected static PlayerController Player;
     protected static Rigidbody2D RigidBody;
+    
+    public event Action<PlayerState> StateChanged;
     
     public static PlayerState Initialize(PlayerController player)
     {
@@ -26,6 +29,8 @@ public abstract class PlayerState
     {
         Exit();
         newState.Enter();
+        
+        StateChanged?.Invoke(newState);
         return newState;
     }
 }
