@@ -1,13 +1,22 @@
 using PlayerScripts;
 using UnityEngine;
-using UnityEngine.Timeline;
 
-public abstract class PlayerState : PlayerController
+public abstract class PlayerState
 {
     public static readonly GroundedState Grounded = new();
     public static readonly JumpingState Jumping = new();
     public static readonly InJumpPeakState InJumpPeak = new();
     public static readonly FallingState Falling = new();
+    
+    protected static PlayerController Player;
+    protected static Rigidbody2D RigidBody;
+    
+    public static PlayerState Initialize(PlayerController player)
+    {
+        Player = player;
+        RigidBody = player.GetComponent<Rigidbody2D>();
+        return Falling;
+    }
     
     protected abstract void Enter();
     protected abstract void Exit();
@@ -43,7 +52,7 @@ public class GroundedState : PlayerState
 
     private void Jump()
     {
-        RigidBody.AddForce(jumpForce * Up, ForceMode2D.Impulse);
+        RigidBody.AddForce(Player.jumpForce * Vector2.up, ForceMode2D.Impulse);
         ChangeState(Jumping);
     }
 }
@@ -70,20 +79,20 @@ public class JumpingState : PlayerState
 
     private void CheckJumpHeight()
     {
-        float deltaHeight = Transform.position.y - _prevYPos;
+        float deltaHeight = Player.transform.position.y - _prevYPos;
         _jumpHeight += deltaHeight;
             
-        if (_jumpHeight >= maxJumpHeight)
+        if (_jumpHeight >= Player.maxJumpHeight)
         {
             CancelJump();
         }
             
-        _prevYPos = Transform.position.y;
+        _prevYPos = Player.transform.position.y;
     }
 
     private void CancelJump()
     {
-        RigidBody.AddForce(RigidBody.velocity.y * jumpCancelForce * Vector2.down, ForceMode2D.Impulse);
+        RigidBody.AddForce(RigidBody.velocity.y * Player.jumpCancelForce * Vector2.down, ForceMode2D.Impulse);
         ChangeState(InJumpPeak);
     }
 }
@@ -101,7 +110,7 @@ public class InJumpPeakState : PlayerState
     {
         _airTime += Time.deltaTime;
             
-        if (_airTime >= gravityCancelTime)
+        if (_airTime >= Player.gravityCancelTime)
         {
             ChangeState(Falling);
         }
@@ -117,7 +126,7 @@ public class FallingState : PlayerState
 {
     protected override void Enter()
     {
-        RigidBody.gravityScale = fallingSpeed;
+        RigidBody.gravityScale = Player.fallingSpeed;
     }
 
     public override void UpdateState() {}
