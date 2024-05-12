@@ -13,22 +13,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 1.0f;
     [SerializeField] private float maxJumpHeight = 3.0f;
     
-    [SerializeField] private float gravityCancelTime = 0.3f;
-    [SerializeField] private float fallingSpeed = 5.0f;
+    [SerializeField] private float fallingGravityScale = 5.0f;
     [SerializeField] private float jumpCancelForce = 3.0f;
 
     private Transform _transform;
     private Rigidbody2D _rigidBody;
+    private float _gravityScale;
     
     private Vector2 _up = Vector2.up;
 
     private bool _isJumping;
     private bool _isGrounded;
-    private bool _inJumpPeak;
     
-    private float _airTime;
     private float _jumpHeight;
     private float _prevYPos;
+    private float _airTime;
     
     private bool IsFalling => _rigidBody.velocity.y < 0;
 
@@ -37,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         _transform = transform;
         _rigidBody = GetComponent<Rigidbody2D>();
+        _gravityScale = _rigidBody.gravityScale;
         
         Controls.Jumps += Jump;
         Controls.JumpsRelease += CancelJump;
@@ -70,15 +70,11 @@ public class PlayerController : MonoBehaviour
     {
         if (IsFalling)
         {
-            _rigidBody.gravityScale = fallingSpeed;
-        }
-        else if (_inJumpPeak && _airTime < gravityCancelTime)
-        {
-            _rigidBody.gravityScale = 0.1f;
+            _rigidBody.gravityScale = fallingGravityScale;
         }
         else
         {
-            _rigidBody.gravityScale = 1;
+            _rigidBody.gravityScale = _gravityScale;
         }
     }
 
@@ -99,16 +95,14 @@ public class PlayerController : MonoBehaviour
     {
         if (!_isJumping) return;
         
-        _rigidBody.AddForce(_rigidBody.velocity.y * jumpCancelForce * Vector2.down, ForceMode2D.Impulse);
+        _rigidBody.AddForce(MathF.Pow(_rigidBody.velocity.y, jumpCancelForce) * Vector2.down, ForceMode2D.Impulse);
         
         _isJumping = false;
-        _inJumpPeak = true;
         _jumpHeight = 0;
     }
 
     public void Ground(bool isGrounded)
     {
         _isGrounded = isGrounded;
-        _airTime = 0;
     }
 }
