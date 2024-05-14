@@ -384,6 +384,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1404060810}
     m_Modifications:
+    - target: {fileID: 4814983997051053412, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.03918787
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814983997051053412, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.03918787
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814983997051053412, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.03918787
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814983997051053412, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814983997051053412, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5399072785691723673, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -943,6 +963,18 @@ PrefabInstance:
     - target: {fileID: 5399072786270196056, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236324403726630417, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_Color.b
+      value: 0.91764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236324403726630417, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_Color.g
+      value: 0.91764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236324403726630417, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_Color.r
+      value: 0.91764706
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
