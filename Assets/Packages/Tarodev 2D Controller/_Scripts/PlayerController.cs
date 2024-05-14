@@ -89,19 +89,17 @@ namespace TarodevController
         {
             Physics2D.queriesStartInColliders = false;
             
+            // Ground and Ceiling
             bool groundHit = _groundCollider.IsTouchingLayers(~_stats.PlayerLayer);
             bool ceilingHit = _ceilingCollider.IsTouchingLayers(~_stats.PlayerLayer);
-
-            // Ground and Ceiling
-            // bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
-            // bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
-
+            
             // Hit a Ceiling
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
 
             // Landed on the Ground
             if (!_grounded && groundHit)
             {
+                Debug.Log("Ground Hit");
                 _grounded = true;
                 _coyoteUsable = true;
                 _bufferedJumpUsable = true;
