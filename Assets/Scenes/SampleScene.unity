@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 200773163}
   - component: {fileID: 200773166}
   - component: {fileID: 200773165}
-  - component: {fileID: 200773164}
   m_Layer: 3
   m_Name: CeilingCheck
   m_TagString: Untagged
@@ -151,45 +150,12 @@ Transform:
   m_GameObject: {fileID: 200773162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.511, z: 0}
-  m_LocalScale: {x: 1.0073829, y: 1, z: 1}
+  m_LocalScale: {x: 0.8613123, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1800235404}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &200773164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200773162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c56a3f6cbe8b33a43815b4fc3b42598a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onTriggerEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1800235405}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: CancelJump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
-  acceptedLayers:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!68 &200773165
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -435,9 +401,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1800235404}
   - component: {fileID: 1800235403}
-  - component: {fileID: 1800235406}
   - component: {fileID: 1800235402}
-  - component: {fileID: 1800235405}
+  - component: {fileID: 1800235406}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -457,10 +422,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 1
-  m_GravityScale: 1
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: f01572131ba45964d899f41e4d13a031, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 0
@@ -535,25 +500,8 @@ Transform:
   m_Father: {fileID: 1404060810}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1800235405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800235400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23a3c3bcbfeb64d47a530d44ae3f68c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalSpeed: 7
-  jumpForce: 20
-  maxJumpHeight: 3.3
-  fallingGravityScale: 10
-  jumpCancelForce: 1
---- !u!58 &1800235406
-CircleCollider2D:
+--- !u!70 &1800235406
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -565,9 +513,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.00000047683716}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0.0017178059, y: -0.004273355}
+  m_Size: {x: 0.9828305, y: 0.9914547}
+  m_Direction: 0
 --- !u!1 &1928928592
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +527,6 @@ GameObject:
   - component: {fileID: 1928928593}
   - component: {fileID: 1928928596}
   - component: {fileID: 1928928595}
-  - component: {fileID: 1928928594}
   m_Layer: 3
   m_Name: FloorCheck
   m_TagString: Untagged
@@ -602,51 +549,6 @@ Transform:
   m_Father: {fileID: 1800235404}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1928928594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928928592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c56a3f6cbe8b33a43815b4fc3b42598a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onTriggerEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1800235405}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Ground
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  onTriggerExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1800235405}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Ground
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  acceptedLayers:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!68 &1928928595
 EdgeCollider2D:
   m_ObjectHideFlags: 0
