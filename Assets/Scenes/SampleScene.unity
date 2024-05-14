@@ -434,6 +434,7 @@ GameObject:
   - component: {fileID: 1519625099}
   - component: {fileID: 1519625098}
   - component: {fileID: 1519625100}
+  - component: {fileID: 1519625101}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -545,6 +546,39 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.62
+--- !u!114 &1519625101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519625096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56a3f6cbe8b33a43815b4fc3b42598a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 42113788}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  acceptedLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1670526866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8672264192914812888, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}

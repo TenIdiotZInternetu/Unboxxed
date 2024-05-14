@@ -8,6 +8,8 @@ public struct Matrix2x2
     const int COLUMNS = 2;
     
     private float[,] _vals;
+
+    public static Matrix2x2 Identity => new(Vector2.up, Vector2.right);
     
     public Matrix2x2(float intialValues = 0)
     {
@@ -18,6 +20,30 @@ public struct Matrix2x2
     public Matrix2x2(float[,] values)
     {
         _vals = values;
+    }
+
+    public Matrix2x2(Vector2 up, Vector2 right)
+    {
+        _vals = new float[ROWS, COLUMNS];
+        _vals[0, 0] = right.x;
+        _vals[0, 1] = right.y;
+        _vals[1, 0] = up.x;
+        _vals[1, 1] = up.y;
+    }
+    
+    public static Matrix2x2 operator +(Matrix2x2 m1, Matrix2x2 m2)
+    {
+        var result = new Matrix2x2();
+        
+        for (int row = 0; row < ROWS; row++)
+        {
+            for (int col = 0; col < COLUMNS; col++)
+            {
+                result[row, col] = m1[row, col] + m2[row, col];
+            }
+        }
+        
+        return result;
     }
 
     public static Matrix2x2 operator *(Matrix2x2 m1, Matrix2x2 m2)
