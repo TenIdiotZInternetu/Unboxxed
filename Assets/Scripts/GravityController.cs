@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class GravityController : MonoBehaviour
 {
-    
     public Matrix2x2 RotationMatrix { get; private set; }
+    public Matrix2x2 InverseMatrix = RotationMatrix.Transpose();
+    
     public Vector2 Up => RotationMatrix.Column(1);
     public Vector2 Right => RotationMatrix.Column(0);
     public Vector2 Down => -Up;
@@ -32,5 +33,10 @@ public class GravityController : MonoBehaviour
     public Vector2 ApplyMatrix(Vector2 vector)
     {
         return RotationMatrix * vector;
+    }
+
+    public Vector2 ApplyInverse(Vector2 vector)
+    {
+        return InverseMatrix * vector;
     }
 }
