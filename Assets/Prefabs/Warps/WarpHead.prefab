@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5863294019727393857}
   - component: {fileID: 5863294019727393856}
   m_Layer: 0
-  m_Name: WarpRight
+  m_Name: WarpHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
