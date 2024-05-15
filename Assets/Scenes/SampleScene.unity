@@ -193,6 +193,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!68 &373921718 stripped
+EdgeCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8672264191316068477, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}
+  m_PrefabInstance: {fileID: 819401320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &389926943
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +381,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8672264192914812895, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 05e6a06c5af93134ab98ff12e2c27265, type: 2}
+    - target: {fileID: 8672264192914812895, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}
+      propertyPath: gravity
+      value: 
+      objectReference: {fileID: 42113789}
+    - target: {fileID: 8672264192914812895, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}
+      propertyPath: groundCollider
+      value: 
+      objectReference: {fileID: 1705810466}
+    - target: {fileID: 8672264192914812895, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}
+      propertyPath: ceilingCollider
+      value: 
+      objectReference: {fileID: 373921718}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}
 --- !u!4 &819401321 stripped
@@ -540,7 +561,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -561,13 +582,13 @@ MonoBehaviour:
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 42113788}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 42113789}
+        m_TargetAssemblyTypeName: GravityController, Assembly-CSharp
+        m_MethodName: RotateTo
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 11400000, guid: d78144dbdc4e57c4782133cb900771cb, type: 2}
+          m_ObjectArgumentAssemblyTypeName: GravityDirectionSo, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -578,7 +599,7 @@ MonoBehaviour:
       m_Calls: []
   acceptedLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!1 &1670526866 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8672264192914812888, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}
@@ -604,6 +625,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &1705810466 stripped
+EdgeCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8672264192506632963, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}
+  m_PrefabInstance: {fileID: 819401320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5399072785900192831
 PrefabInstance:
   m_ObjectHideFlags: 0

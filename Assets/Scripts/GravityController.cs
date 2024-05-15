@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GravityController : MonoBehaviour
@@ -8,6 +9,8 @@ public class GravityController : MonoBehaviour
     public Vector2 Right => RotationMatrix.Column(0);
     public Vector2 Down => -Up;
     public Vector2 Left  => -Right;
+    
+    public event Action OnGravityChanged;
 
     public void Awake()
     {
@@ -24,5 +27,10 @@ public class GravityController : MonoBehaviour
     public void RotateBy(GravityDirectionSo direction)
     {
         RotationMatrix = new Matrix2x2(direction.up, direction.right) * RotationMatrix;
+    }
+
+    public Vector2 ApplyMatrix(Vector2 vector)
+    {
+        return RotationMatrix * vector;
     }
 }
