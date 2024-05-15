@@ -119,4 +119,9 @@ public struct Matrix2x2
             yield return Row(i);
         }
     }
+
+    public override string ToString()
+    {
+        return Row(0) + "\n" + Row(1);
+    }
 }
