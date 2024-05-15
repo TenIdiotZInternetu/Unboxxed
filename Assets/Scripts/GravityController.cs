@@ -11,11 +11,14 @@ public class GravityController : MonoBehaviour
     public Vector2 Down => -Up;
     public Vector2 Left  => -Right;
     
+    public Quaternion RotationQuaternion { get; private set; }
+
     public event Action OnGravityChanged;
 
     public void Awake()
     {
         RotationMatrix = CanonicalRotation;
+        CalculateQuaternion();
     }
 
     public readonly Matrix2x2 CanonicalRotation = Matrix2x2.Identity;
@@ -23,11 +26,13 @@ public class GravityController : MonoBehaviour
     public void RotateTo(GravityDirectionSo direction)
     {
         RotationMatrix = new Matrix2x2(direction.up, direction.right);
+        CalculateQuaternion();
     }
     
     public void RotateBy(GravityDirectionSo direction)
     {
         RotationMatrix = new Matrix2x2(direction.up, direction.right) * RotationMatrix;
+        CalculateQuaternion();
     }
 
     public Vector2 ApplyMatrix(Vector2 vector)
@@ -39,4 +44,10 @@ public class GravityController : MonoBehaviour
     {
         return InverseMatrix * vector;
     }
+
+    private void CalculateQuaternion()
+    {
+        RotationQuaternion = Quaternion.FromToRotation(Vector2.up, Up);
+    }
+    
 }
