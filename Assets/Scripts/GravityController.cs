@@ -4,7 +4,7 @@ using UnityEngine;
 public class GravityController : MonoBehaviour
 {
     public Matrix2x2 RotationMatrix { get; private set; }
-    public Matrix2x2 InverseMatrix = RotationMatrix.Transpose();
+    public Matrix2x2 InverseMatrix => RotationMatrix.Transpose();
     
     public Vector2 Up => RotationMatrix.Column(1);
     public Vector2 Right => RotationMatrix.Column(0);
