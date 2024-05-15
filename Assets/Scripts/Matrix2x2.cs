@@ -26,8 +26,8 @@ public struct Matrix2x2
     {
         _vals = new float[ROWS, COLUMNS];
         _vals[0, 0] = right.x;
-        _vals[0, 1] = right.y;
-        _vals[1, 0] = up.x;
+        _vals[1, 0] = right.y;
+        _vals[0, 1] = up.x;
         _vals[1, 1] = up.y;
     }
     
