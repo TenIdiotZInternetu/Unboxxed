@@ -28,6 +28,10 @@ namespace TarodevController
 
         #region Interface
 
+        public Vector2 RelativeVelocity => gravity.ApplyInverse(_rb.velocity);
+        public bool IsRising => RelativeVelocity.y > 0;
+        public bool IsFalling => RelativeVelocity.y < 0;
+        
         public Vector2 FrameInput => _frameInput.Move;
         public event Action<bool, float> GroundedChanged;
         public event Action Jumped;
@@ -76,6 +80,7 @@ namespace TarodevController
         private void FixedUpdate()
         {
             _frameVelocity = _rb.velocity;
+            _frameVelocity = gravity.ApplyInverse(_frameVelocity);
             CheckCollisions();
 
             HandleJump();
@@ -136,7 +141,7 @@ namespace TarodevController
 
         private void HandleJump()
         {
-            if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.velocity.y > 0) _endedJumpEarly = true;
+            if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && IsRising) _endedJumpEarly = true;
 
             if (!_jumpToConsume && !HasBufferedJump) return;
 
@@ -195,13 +200,12 @@ namespace TarodevController
         private void ApplyGravityDirection()
         {
             transform.rotation = gravity.RotationQuaternion;
-            _frameVelocity = gravity.ApplyMatrix(_frameVelocity);
+            // _frameVelocity = gravity.ApplyMatrix(_frameVelocity);
         }
 
         private void ApplyMovement()
         {
-            ApplyGravityDirection();
-            _rb.velocity = _frameVelocity;
+            _rb.velocity = gravity.ApplyMatrix(_frameVelocity);
         }
 
 
