@@ -79,8 +79,6 @@ namespace TarodevController
 
         private void FixedUpdate()
         {
-            _frameVelocity = _rb.velocity;
-            _frameVelocity = gravity.ApplyInverse(_frameVelocity);
             CheckCollisions();
 
             HandleJump();
@@ -200,7 +198,6 @@ namespace TarodevController
         private void ApplyGravityDirection()
         {
             transform.rotation = gravity.RotationQuaternion;
-            // _frameVelocity = gravity.ApplyMatrix(_frameVelocity);
         }
 
         private void ApplyMovement()
