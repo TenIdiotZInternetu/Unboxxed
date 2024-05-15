@@ -89,8 +89,8 @@ public struct Matrix2x2
 
     public Matrix2x2 Transpose()
     {
-        Vector2 up = Row(0);
-        Vector2 right = Row(1);
+        Vector2 right = Row(0);
+        Vector2 up = Row(1);
         return new Matrix2x2(up, right);
     }
     
