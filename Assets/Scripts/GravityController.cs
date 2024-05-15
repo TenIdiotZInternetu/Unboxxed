@@ -27,12 +27,14 @@ public class GravityController : MonoBehaviour
     {
         RotationMatrix = new Matrix2x2(direction.up, direction.right);
         CalculateQuaternion();
+        OnGravityChanged?.Invoke();
     }
     
     public void RotateBy(GravityDirectionSo direction)
     {
         RotationMatrix = new Matrix2x2(direction.up, direction.right) * RotationMatrix;
         CalculateQuaternion();
+        OnGravityChanged?.Invoke();
     }
 
     public Vector2 ApplyMatrix(Vector2 vector)
