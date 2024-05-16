@@ -21,9 +21,11 @@ namespace MonoScripts
 
         public void ChangeCamera(CinemachineVirtualCamera newCamera)
         {
-            newCamera.Priority = ACTIVE_PRIORITY;
             _currentCamera.Priority = NO_PRIORITY;
             _currentCamera = newCamera;
+            _currentCamera.Priority = ACTIVE_PRIORITY;
+            
+            Debug.Log(_currentCamera.Priority);
         }
     }
 }
