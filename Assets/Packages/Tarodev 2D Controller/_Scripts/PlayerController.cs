@@ -111,7 +111,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
                 _grounded = true;
                 _coyoteUsable = true;
                 _bufferedJumpUsable = true;
-                _endedJumpEarly = false;
+                _releasedJumpEarly = false;
                 _inJump = false;
                 GroundedChanged?.Invoke(true, Mathf.Abs(_frameVelocity.y));
             }
@@ -132,7 +132,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
 
         private bool _jumpToConsume;
         private bool _bufferedJumpUsable;
-        private bool _endedJumpEarly;
+        private bool _releasedJumpEarly;
         private bool _coyoteUsable;
         private float _timeJumpWasPressed;
 
@@ -143,9 +143,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
         {
             if (IsFalling) _inJump = false;
             
-            bool releasedJump = _inJump && !_frameInput.JumpHeld && IsRising;
-            
-            if (!_endedJumpEarly && releasedJump) _endedJumpEarly = true;
+            _releasedJumpEarly = _inJump && !_frameInput.JumpHeld;
 
             if (!_jumpToConsume && !HasBufferedJump) return;
 
@@ -156,7 +154,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
 
         private void ExecuteJump()
         {
-            _endedJumpEarly = false;
+            _releasedJumpEarly = false;
             _timeJumpWasPressed = 0;
             _bufferedJumpUsable = false;
             _coyoteUsable = false;
@@ -195,7 +193,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
             else
             {
                 var inAirGravity = stats.FallAcceleration;
-                if (_endedJumpEarly && _frameVelocity.y > 0) inAirGravity *= stats.JumpEndEarlyGravityModifier;
+                if (_releasedJumpEarly && _frameVelocity.y > 0) inAirGravity *= stats.JumpEndEarlyGravityModifier;
                 _frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, -stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
             }
         }
