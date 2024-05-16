@@ -79,6 +79,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
 
         private void FixedUpdate()
         {
+            _frameVelocity = gravity.ApplyInverse(_rb.velocity);
             CheckCollisions();
 
             HandleJump();
