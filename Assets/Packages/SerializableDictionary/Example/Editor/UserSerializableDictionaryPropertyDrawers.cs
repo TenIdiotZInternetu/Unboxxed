@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using Packages.SerializableDictionary.Editor;
 using UnityEditor;
 
-[CustomPropertyDrawer(typeof(StringStringDictionary))]
-[CustomPropertyDrawer(typeof(ObjectColorDictionary))]
-[CustomPropertyDrawer(typeof(StringColorArrayDictionary))]
-public class AnySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer {}
+namespace Packages.SerializableDictionary.Example.Editor
+{
+    [CustomPropertyDrawer(typeof(StringStringDictionary))]
+    [CustomPropertyDrawer(typeof(ObjectColorDictionary))]
+    [CustomPropertyDrawer(typeof(StringColorArrayDictionary))]
+    public class AnySerializableDictionaryPropertyDrawer : SerializableDictionaryPropertyDrawer {}
 
-[CustomPropertyDrawer(typeof(ColorArrayStorage))]
-public class AnySerializableDictionaryStoragePropertyDrawer: SerializableDictionaryStoragePropertyDrawer {}
+    [CustomPropertyDrawer(typeof(ColorArrayStorage))]
+    public class AnySerializableDictionaryStoragePropertyDrawer: SerializableDictionaryStoragePropertyDrawer {}
+}
