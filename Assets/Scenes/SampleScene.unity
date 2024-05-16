@@ -227,6 +227,8 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -293,13 +295,60 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.95, y: -0.77, z: -10}
+  m_LocalPosition: {x: 20.683165, y: -0.71535504, z: -13.544727}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 1
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a5b8a9edfbe604f952342b6c6c9c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialCamera: {fileID: 5399072785900192832}
 --- !u!114 &592112101 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6230047876535019380, guid: b1930b4bf84ae3f40acfde09c6caa40c, type: 3}
@@ -394,6 +443,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5399072785691723673, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
   m_PrefabInstance: {fileID: 5399072785900192831}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &946455309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 542432935240151921, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+  m_PrefabInstance: {fileID: 1811104464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1404060809
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +1009,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[63].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 8974357552213488120, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
 --- !u!4 &1811104465 stripped
@@ -963,6 +1027,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1404060810}
     m_Modifications:
+    - target: {fileID: 5193730818039050862, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_Priority
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5399072785691723673, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1423,8 +1491,23 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[63].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 8974357552213488120, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+--- !u!114 &5399072785900192832 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5193730818039050862, guid: 520fcb08f94504e46a2182dabd96ceda, type: 3}
+  m_PrefabInstance: {fileID: 5399072785900192831}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5863294020894435277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1434,10 +1517,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
@@ -1449,7 +1536,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 592112101}
     - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 519420034}
+    - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
@@ -1457,16 +1552,32 @@ PrefabInstance:
       value: WarpHere
       objectReference: {fileID: 0}
     - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ChangeCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Warp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MonoScripts.CameraController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1670526866}
     - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 946455309}
+    - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863294019727393856, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Cinemachine.CinemachineVirtualCamera, Cinemachine
       objectReference: {fileID: 0}
     - target: {fileID: 5863294019727393860, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
       propertyPath: m_RootOrder
