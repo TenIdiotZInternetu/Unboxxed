@@ -139,8 +139,6 @@ namespace Packages.Tarodev_2D_Controller._Scripts
 
         private void HandleJump()
         {
-            Debug.Log(_rb.velocity);
-            Debug.Log(RelativeVelocity);
             if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && IsRising) _endedJumpEarly = true;
 
             if (!_jumpToConsume && !HasBufferedJump) return;
