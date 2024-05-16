@@ -28,9 +28,8 @@ namespace Packages.Tarodev_2D_Controller._Scripts
 
         #region Interface
 
-        public Vector2 RelativeVelocity => gravity.ApplyInverse(_rb.velocity);
-        public bool IsRising => RelativeVelocity.y > 0;
-        public bool IsFalling => RelativeVelocity.y < 0;
+        public bool IsRising => _frameVelocity.y > 0;
+        public bool IsFalling => _frameVelocity.y < 0;
         
         public Vector2 FrameInput => _frameInput.Move;
         public event Action<bool, float> GroundedChanged;
@@ -93,6 +92,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
         
         private float _frameLeftGrounded = float.MinValue;
         private bool _grounded;
+        private bool _inJump;
 
         private void CheckCollisions()
         {
@@ -112,6 +112,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
                 _coyoteUsable = true;
                 _bufferedJumpUsable = true;
                 _endedJumpEarly = false;
+                _inJump = false;
                 GroundedChanged?.Invoke(true, Mathf.Abs(_frameVelocity.y));
             }
             // Left the Ground
@@ -140,7 +141,11 @@ namespace Packages.Tarodev_2D_Controller._Scripts
 
         private void HandleJump()
         {
-            if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && IsRising) _endedJumpEarly = true;
+            if (IsFalling) _inJump = false;
+            
+            bool releasedJump = _inJump && !_frameInput.JumpHeld && IsRising;
+            
+            if (!_endedJumpEarly && releasedJump) _endedJumpEarly = true;
 
             if (!_jumpToConsume && !HasBufferedJump) return;
 
@@ -155,6 +160,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
             _timeJumpWasPressed = 0;
             _bufferedJumpUsable = false;
             _coyoteUsable = false;
+            _inJump = true;
             _frameVelocity.y = stats.JumpPower;
             Jumped?.Invoke();
         }
