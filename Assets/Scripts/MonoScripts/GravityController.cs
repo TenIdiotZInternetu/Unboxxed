@@ -7,6 +7,8 @@ namespace MonoScripts
 {
     public class GravityController : MonoBehaviour
     {
+        public const string TAG = "Gravity";
+        
         public Matrix2x2 RotationMatrix { get; private set; }
         public Matrix2x2 InverseMatrix => RotationMatrix.Transpose();       // Inverse of a rotation matrix is its transposition
     
@@ -21,6 +23,7 @@ namespace MonoScripts
 
         public void Awake()
         {
+            gameObject.tag = TAG;
             RotationMatrix = CanonicalRotation;
             CalculateQuaternion();
         }
@@ -49,6 +52,11 @@ namespace MonoScripts
         public Vector2 ApplyInverse(Vector2 vector)
         {
             return InverseMatrix * vector;
+        }
+        
+        public static GravityController FindInScene()
+        {
+            return GameObject.FindWithTag(TAG).GetComponent<GravityController>();
         }
 
         private void CalculateQuaternion()

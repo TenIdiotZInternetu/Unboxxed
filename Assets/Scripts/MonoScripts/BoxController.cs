@@ -13,14 +13,21 @@ namespace MonoScripts
     
     public class BoxController : MonoBehaviour
     {
-        [SerializeField] private GravityController gravity;
-        [SerializeField] private CameraController cameraController;
         [SerializeField] private DirectionCameraDictionary cameras;
-        
+
+        private GravityController _gravity;
+        private CameraController _cameraController;
+
+        private void Start()
+        {
+            _gravity = GravityController.FindInScene();
+            _cameraController = CameraController.FindInScene();
+        }
+
         public void Enter(GravityDirectionSo gravityDirection)
         {
-            gravity.RotateTo(gravityDirection);
-            cameraController.ChangeCamera(cameras[gravityDirection]);
+            _gravity.RotateTo(gravityDirection);
+            _cameraController.ChangeCamera(cameras[gravityDirection]);
         }
     }
 }
