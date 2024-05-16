@@ -5,8 +5,8 @@ namespace MonoScripts
 {
     public class Trigger : MonoBehaviour
     {
-        public UnityEvent onTriggerEnter;
-        public UnityEvent onTriggerExit;
+        public UnityEvent<GameObject> onTriggerEnter;
+        public UnityEvent<GameObject> onTriggerExit;
 
         [SerializeField] private LayerMask acceptedLayers;
 
@@ -14,13 +14,13 @@ namespace MonoScripts
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (!IsOnLayer(col)) return;
-            onTriggerEnter.Invoke();
+            onTriggerEnter.Invoke(col.gameObject);
         }
     
         private void OnTriggerExit2D(Collider2D col)
         {
             if (!IsOnLayer(col)) return;
-            onTriggerExit.Invoke();
+            onTriggerExit.Invoke(col.gameObject);
         }
 
         private bool IsOnLayer(Collider2D collider)
