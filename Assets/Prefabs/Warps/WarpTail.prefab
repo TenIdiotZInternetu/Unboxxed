@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6230047876535019381}
   - component: {fileID: 6230047876535019383}
-  - component: {fileID: 6230047876535019380}
   m_Layer: 0
   m_Name: WarpTail
   m_TagString: Untagged
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6230047876535019380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6230047876535019378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a68b2bca576cbc48bb80407b38a15ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
