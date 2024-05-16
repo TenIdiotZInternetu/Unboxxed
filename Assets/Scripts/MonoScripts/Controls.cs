@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace PlayerScripts
+namespace MonoScripts
 {
     /// <summary>
     /// Listens to the Unity's Input Manager and triggers events based on the input

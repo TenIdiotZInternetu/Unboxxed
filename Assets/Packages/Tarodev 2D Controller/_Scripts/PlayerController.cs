@@ -1,8 +1,8 @@
 using System;
+using MonoScripts;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace TarodevController
+namespace Packages.Tarodev_2D_Controller._Scripts
 {
     /// <summary>
     /// Hey!

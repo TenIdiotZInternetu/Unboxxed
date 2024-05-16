@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TarodevController
+namespace Packages.Tarodev_2D_Controller._Scripts
 {
     /// <summary>
     /// VERY primitive animator example.
