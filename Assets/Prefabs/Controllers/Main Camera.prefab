@@ -133,3 +133,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialCamera: {fileID: 0}
+  adjustTransitionsToPlayer: 1
+  velocityToBlendTime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.7
+      inSlope: -0.0011887796
+      outSlope: -0.0011887796
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.77888983
+    - serializedVersion: 3
+      time: 10
+      value: 0.6
+      inSlope: -0.030922422
+      outSlope: -0.030922422
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13488369
+      outWeight: 0.16589148
+    - serializedVersion: 3
+      time: 40
+      value: 0.2
+      inSlope: -0.000078060555
+      outSlope: -0.000078060555
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.08062019
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

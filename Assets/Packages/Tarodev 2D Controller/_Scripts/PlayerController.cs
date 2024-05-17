@@ -30,6 +30,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
 
         #region Interface
 
+        public float MovementSpeed => _frameVelocity.magnitude;
         public bool IsRising => _frameVelocity.y > 0;
         public bool IsFalling => _frameVelocity.y < 0;
         
