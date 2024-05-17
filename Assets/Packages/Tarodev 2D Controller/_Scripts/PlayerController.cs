@@ -18,7 +18,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
         [SerializeField] private Collider2D groundCollider;
         [SerializeField] private Collider2D ceilingCollider;
 
-        [SerializeField] private GravityController gravity;
+        private GravityController _gravity;
         
         private Rigidbody2D _rb;
         private CapsuleCollider2D _col;
@@ -43,9 +43,10 @@ namespace Packages.Tarodev_2D_Controller._Scripts
         {
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CapsuleCollider2D>();
+            _gravity = GravityController.FindInScene();
 
             _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
-            gravity.OnGravityChanged += ApplyGravityDirection;
+            _gravity.OnGravityChanged += ApplyGravityDirection;
         }
 
         private void Update()
@@ -78,7 +79,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
 
         private void FixedUpdate()
         {
-            _frameVelocity = gravity.ApplyInverse(_rb.velocity);
+            _frameVelocity = _gravity.ApplyInverse(_rb.velocity);
             CheckCollisions();
 
             HandleJump();
@@ -202,12 +203,12 @@ namespace Packages.Tarodev_2D_Controller._Scripts
 
         private void ApplyGravityDirection()
         {
-            transform.rotation = gravity.RotationQuaternion;
+            transform.rotation = _gravity.RotationQuaternion;
         }
 
         private void ApplyMovement()
         {
-            _rb.velocity = gravity.ApplyMatrix(_frameVelocity);
+            _rb.velocity = _gravity.ApplyMatrix(_frameVelocity);
         }
 
 
