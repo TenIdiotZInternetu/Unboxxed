@@ -1,3 +1,4 @@
+using System;
 using Cinemachine;
 using MyBox;
 using Packages.Tarodev_2D_Controller._Scripts;
@@ -16,28 +17,19 @@ namespace MonoScripts
         private const int NO_PRIORITY = 0;
     
         [SerializeField] private CinemachineVirtualCamera initialCamera;
-        [SerializeField] private bool adjustTransitionsToPlayer;
     
         private CinemachineBrain _brain;
-        private CinemachineVirtualCamera _currentCamera;
-        
-        private PlayerController _player;
-        
-        [ConditionalField(nameof(adjustTransitionsToPlayer))]
-        [SerializeField] private AnimationCurve velocityToBlendTime;
+        public CinemachineVirtualCamera CurrentCamera { get; private set; }
+
+        public Action<CinemachineVirtualCamera> OnCameraChanged;
         
         private void Awake()
         {
             gameObject.tag = TAG;
             _brain = GetComponent<CinemachineBrain>();
             
-            _currentCamera = initialCamera;
-            _currentCamera.Priority = INITIAL_PRIORITY;
-
-            if (adjustTransitionsToPlayer)
-            {
-                _player = PlayerController.FindInScene();
-            }
+            CurrentCamera = initialCamera;
+            CurrentCamera.Priority = INITIAL_PRIORITY;
         }
         
         public static CameraController FindInScene()
@@ -47,15 +39,11 @@ namespace MonoScripts
 
         public void ChangeCamera(CinemachineVirtualCamera newCamera)
         {
-            _currentCamera.Priority = NO_PRIORITY;
-            _currentCamera = newCamera;
-            _currentCamera.Priority = ACTIVE_PRIORITY;
+            CurrentCamera.Priority = NO_PRIORITY;
+            CurrentCamera = newCamera;
+            CurrentCamera.Priority = ACTIVE_PRIORITY;
             
-            if (adjustTransitionsToPlayer)
-            {
-                var newBlendTime = velocityToBlendTime.Evaluate(_player.MovementSpeed);
-                _brain.m_DefaultBlend.m_Time = newBlendTime;
-            }
+            OnCameraChanged?.Invoke(CurrentCamera);
         }
     }
 }
