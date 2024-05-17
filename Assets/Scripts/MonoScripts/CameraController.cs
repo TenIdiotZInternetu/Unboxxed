@@ -32,8 +32,6 @@ namespace MonoScripts
             _currentCamera.Priority = NO_PRIORITY;
             _currentCamera = newCamera;
             _currentCamera.Priority = ACTIVE_PRIORITY;
-            
-            Debug.Log(_currentCamera.Priority);
         }
     }
 }
