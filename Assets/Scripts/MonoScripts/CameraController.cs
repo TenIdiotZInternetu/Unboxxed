@@ -30,6 +30,7 @@ namespace MonoScripts
             
             CurrentCamera = initialCamera;
             CurrentCamera.Priority = INITIAL_PRIORITY;
+            OnCameraChanged?.Invoke(CurrentCamera);
         }
         
         public static CameraController FindInScene()
