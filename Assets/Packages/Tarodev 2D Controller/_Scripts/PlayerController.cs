@@ -14,6 +14,8 @@ namespace Packages.Tarodev_2D_Controller._Scripts
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController
     {
+        public const string TAG = "Player";
+        
         [SerializeField] private ScriptableStats stats;
         [SerializeField] private Collider2D groundCollider;
         [SerializeField] private Collider2D ceilingCollider;
@@ -75,6 +77,11 @@ namespace Packages.Tarodev_2D_Controller._Scripts
                 _jumpToConsume = true;
                 _timeJumpWasPressed = _time;
             }
+        }
+        
+        public static PlayerController FindInScene()
+        {
+            return GameObject.FindWithTag(TAG).GetComponent<PlayerController>();
         }
 
         private void FixedUpdate()
