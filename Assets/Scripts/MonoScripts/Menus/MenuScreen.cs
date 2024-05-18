@@ -53,7 +53,7 @@ namespace MonoScripts.Menus
         private IEnumerator CloseCoroutine()
         {
             menuLeftEvent?.Invoke();
-            yield return new WaitForSeconds(onCloseDelay);
+            yield return new WaitForSecondsRealtime(onCloseDelay);
             gameObject.SetActive(false);
         }
     }

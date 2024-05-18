@@ -692,6 +692,7 @@ GameObject:
   - component: {fileID: 1589412957}
   - component: {fileID: 1589412956}
   - component: {fileID: 1589412955}
+  - component: {fileID: 1589412958}
   m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -782,6 +783,25 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1589412958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589412953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a201f97e5d834d6c95cdc617ca791733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onCloseDelay: 0.03
+  menuLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  menuOpenedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1603006514
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +903,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1670526876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670526866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66a38473a5146c2b96676befa892be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseScreen: {fileID: 1589412958}
 --- !u!68 &1705810466 stripped
 EdgeCollider2D:
   m_CorrespondingSourceObject: {fileID: 8672264192506632963, guid: 4e4d5b6d9598cee4d96bc4df06136a76, type: 3}
@@ -1051,6 +1084,10 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 3592411290198518500, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
 --- !u!224 &2102192864 stripped
@@ -1164,6 +1201,10 @@ PrefabInstance:
     - target: {fileID: 1342342015022181791, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
       propertyPath: m_Name
       value: QuitBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592411290198518500, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
