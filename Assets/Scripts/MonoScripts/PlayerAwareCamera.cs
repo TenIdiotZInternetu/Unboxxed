@@ -41,7 +41,10 @@ namespace MonoScripts
         {
             var lookDown = lookDownSpeed.Evaluate(Controls.MoveVertical);
             var lookDownVector = new Vector2(0, lookDown);
-            _currentCameraTransposer.m_FollowOffset.y = _gravity.ApplyMatrix(lookDownVector).y;
+            float zValue = _currentCameraTransposer.m_FollowOffset.z;
+            
+            _currentCameraTransposer.m_FollowOffset = _gravity.ApplyMatrix(lookDownVector);
+            _currentCameraTransposer.m_FollowOffset.z = zValue;
         }
         
         private void AdjustBlendtime(CinemachineVirtualCamera _)
