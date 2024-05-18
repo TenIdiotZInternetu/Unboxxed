@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 8672264192914812890}
   - component: {fileID: 8672264192914812894}
   - component: {fileID: 8672264192914812895}
+  - component: {fileID: 4299192018817414602}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -293,3 +294,16 @@ MonoBehaviour:
   stats: {fileID: 0}
   groundCollider: {fileID: 0}
   ceilingCollider: {fileID: 0}
+--- !u!114 &4299192018817414602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8672264192914812888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66a38473a5146c2b96676befa892be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseScreen: {fileID: 0}
