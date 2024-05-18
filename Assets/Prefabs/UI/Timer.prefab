@@ -249,5 +249,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad19a8de4353492bb4c1a153498db545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 8805757914178570357}
+  tmpText: {fileID: 8805757914178570357}
   format: '{0}:{1:00}.{2:000}'
