@@ -20,6 +20,11 @@ namespace MonoScripts
         /// </summary>
         public static float MoveVertical;
         
+        public static bool Action1Held;
+        public static bool JumpHeld;
+        public static bool SubmitHeld;
+        public static bool CancelHeld;
+        
         /*------------------------- Events ----------------------*/
         
         /// <summary>
@@ -89,22 +94,22 @@ namespace MonoScripts
             MoveHorizontal = Input.GetAxis("Horizontal");
             MoveVertical = Input.GetAxis("Vertical");
             
-            bool action1 = Input.GetButton("Fire1");
-            bool jump = Input.GetButton("Jump");
-            bool submit = Input.GetButton("Submit");
-            bool cancel = Input.GetButton("Cancel");
+            Action1Held = Input.GetButton("Fire1");
+            JumpHeld = Input.GetButton("Jump");
+            SubmitHeld = Input.GetButton("Submit");
+            CancelHeld = Input.GetButton("Cancel");
             
-            if (action1) Action1?.Invoke();
-            else Action1Release?.Invoke();
+            if (Input.GetButtonDown("Fire1")) Action1?.Invoke();
+            if (Input.GetButtonUp("Fire1")) Action1Release?.Invoke();
             
-            if (jump) Jumps?.Invoke();
-            else JumpsRelease?.Invoke();
+            if (Input.GetButtonDown("Jump")) Jumps?.Invoke();
+            if (Input.GetButtonUp("Jump")) JumpsRelease?.Invoke();
             
-            if (submit) Submit?.Invoke();
-            else SubmitRelease?.Invoke();
+            if (Input.GetButtonDown("Submit")) Submit?.Invoke();
+            if (Input.GetButtonUp("Submit")) SubmitRelease?.Invoke();
             
-            if (cancel) Cancel?.Invoke();
-            else CancelRelease?.Invoke();
+            if (Input.GetButtonDown("Cancel")) Cancel?.Invoke();
+            if (Input.GetButtonUp("Cancel")) CancelRelease?.Invoke();
             
             if (MoveVertical > 0.001f) MovesUp?.Invoke(MoveVertical);
             if (MoveVertical < -0.001f) MovesDown?.Invoke(MoveVertical);
