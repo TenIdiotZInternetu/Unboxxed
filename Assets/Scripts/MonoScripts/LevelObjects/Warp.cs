@@ -1,8 +1,7 @@
 using SOs;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace MonoScripts
+namespace MonoScripts.Objects
 {
     public class Warp : MonoBehaviour
     {
