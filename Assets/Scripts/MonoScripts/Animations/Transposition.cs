@@ -8,7 +8,7 @@ namespace MonoScripts.Animations
     {
         [SerializeField] private AnimationCurve transpositionCurve;
         [SerializeField] private float transpositionDuration = 1f;
-        [SerializeField] private Vector3 targetPosition;
+        [SerializeField] private Transform targetPosition;
 
         private Transform _transform;
         
@@ -23,12 +23,12 @@ namespace MonoScripts.Animations
 
         public void Move()
         {
-            StartCoroutine(MoveCoroutine(_initialPosition, targetPosition));
+            StartCoroutine(MoveCoroutine(_initialPosition, targetPosition.position));
         }
         
         public void MoveBack()
         {
-            StartCoroutine(MoveCoroutine(targetPosition, _initialPosition));
+            StartCoroutine(MoveCoroutine(targetPosition.position, _initialPosition));
         }
 
         private IEnumerator MoveCoroutine(Vector3 from, Vector3 to)
