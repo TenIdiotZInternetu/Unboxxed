@@ -1,13 +1,9 @@
-using System;
-using Packages.SerializableDictionary;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.Serialization;
 
-namespace MonoScripts.SceneControllers
+namespace SOs
 {
     [CreateAssetMenu(fileName = "SoundController", menuName = "SOs/SoundController", order = 0)]
-    public class SoundController : ScriptableObject
+    public class SoundControllerSo : ScriptableObject
     {
         [SerializeField] private AudioSource audioSource;
         
