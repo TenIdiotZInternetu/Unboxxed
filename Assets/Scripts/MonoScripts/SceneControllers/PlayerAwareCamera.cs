@@ -1,3 +1,4 @@
+using System;
 using Cinemachine;
 using Packages.Tarodev_2D_Controller._Scripts;
 using UnityEngine;
@@ -31,7 +32,12 @@ namespace MonoScripts.SceneControllers
             _controller.OnCameraChanged += AdjustBlendtime;
             _controller.OnCameraChanged += GetTransposer;
         }
-        
+
+        private void Start()
+        {
+            GetTransposer(_controller.CurrentCamera);
+        }
+
         private void Update()
         {
             LookDown();
