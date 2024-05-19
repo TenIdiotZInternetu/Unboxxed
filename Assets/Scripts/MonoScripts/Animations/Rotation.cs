@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MonoScripts.SceneControllers;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Rotation : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Rotation : MonoBehaviour
     [SerializeField] private AnimationCurve rotationCurve;
     [SerializeField] private float rotationDuration = 1f;
     
-    [SerializeField] private bool rotateToGravity = true;
+    [SerializeField] private bool followGravity = true;
     
     private GravityController _gravity;
     private Transform _transform;
@@ -25,13 +26,13 @@ public class Rotation : MonoBehaviour
         _transform = transform;
         _gravity = GravityController.FindInScene();
         
-        _transform.rotation = _gravity.RotationQuaternion;
-        _currentRotation = _transform.rotation;
-
-        if (rotateToGravity)
+        if (followGravity)
         {
+            _transform.rotation = _gravity.RotationQuaternion;
             _gravity.OnGravityChanged += RotateToGravity;
         }
+        
+        _currentRotation = _transform.rotation;
     }
 
     public void RotateToGravity()

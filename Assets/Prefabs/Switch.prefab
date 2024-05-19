@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2702236068798912167}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.008000088, z: 0}
+  m_LocalPosition: {x: -0.0005, y: 0.0473, z: 0}
   m_LocalScale: {x: 0.0185979, y: 0.0185979, z: 0.0185979}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.414781, g: 1, b: 0.35283017, a: 1}
+  m_Color: {r: 0.30907917, g: 0.7924528, b: 0.25717336, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,7 +107,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5301243421224795288}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1196, y: 0.4434, z: 0}
   m_LocalScale: {x: 1.3542608, y: 1.3542608, z: 1.3542608}
   m_ConstrainProportionsScale: 0
@@ -115,7 +115,7 @@ Transform:
   - {fileID: 5202655879698041200}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6123044691410906673
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6123044691410906673}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.04455411, z: 0}
+  m_LocalPosition: {x: -0.0005, y: 0.0107, z: 0}
   m_LocalScale: {x: 0.078261, y: 0.078261, z: 0.078260995}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 995242308205078971}
   - component: {fileID: 7077583482278334931}
   - component: {fileID: 4764777020072892349}
+  - component: {fileID: 7575630878546997182}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -244,7 +245,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6183068213638239194}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -267,11 +268,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00077412993, y: -0.03491916}
-  m_Size: {x: 0.03580135, y: 0.08523627}
+  m_Offset: {x: 0.00015361457, y: 0.020614844}
+  m_Size: {x: 0.034560967, y: 0.07659767}
   m_Direction: 0
 --- !u!114 &4764777020072892349
 MonoBehaviour:
@@ -287,10 +288,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7575630878546997182}
+        m_TargetAssemblyTypeName: Rotation, Assembly-CSharp
+        m_MethodName: RotateBy
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 270
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
   acceptedLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  singleUse: 1
+--- !u!114 &7575630878546997182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183068213638239194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66aed77e48090d41816fb28c9665b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationDuration: 1
+  followGravity: 0
