@@ -1,20 +1,26 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Utils
 {
-    public static class LevelSelect
+    public class LevelSelect : MonoBehaviour
     {
         public static int CurrentLevel { get; private set; } = 1;
         
-        public static void ChangeLevel(int level)
+        public void ChangeLevel(int level)
         {
             SceneManager.LoadScene("Level" + level);
             CurrentLevel = level;
         }
         
-        public static void LoadNextLevel()
+        public void LoadNextLevel()
         {
             ChangeLevel(CurrentLevel + 1);
+        }
+
+        public void ResetLevel()
+        {
+            ChangeLevel(CurrentLevel);
         }
     }
 }
