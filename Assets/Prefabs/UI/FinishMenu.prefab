@@ -175,7 +175,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   finalTimeText: {fileID: 0}
   bestTimeText: {fileID: 0}
-  currentLevelText: {fileID: 4734754963640715832}
+  currentLevelText: {fileID: 5596904680685257078}
 --- !u!1 &4734754963394118256
 GameObject:
   m_ObjectHideFlags: 0

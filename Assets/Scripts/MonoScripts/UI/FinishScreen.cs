@@ -24,7 +24,7 @@ namespace MonoScripts.UI
             
             if (currentLevelText is not null)
             {
-                currentLevelText.text = "Level " + LevelSelect.CurrentLevel + "\n FINISHED";
+                currentLevelText.text = "Level " + LevelSelect.CurrentLevel;
             }
             
             if (timer is not null && finalTimeText is not null)
