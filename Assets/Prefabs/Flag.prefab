@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3499387758761620802}
   - component: {fileID: 5020181872298223569}
   - component: {fileID: -4239334049591386543}
+  - component: {fileID: 2282673474938054399}
   m_Layer: 0
   m_Name: Flag
   m_TagString: Untagged
@@ -206,3 +207,15 @@ MonoBehaviour:
   speed: 0.25
   multiplier: 0.1
   followGravity: 1
+--- !u!114 &2282673474938054399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3499387758761620815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66aed77e48090d41816fb28c9665b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
