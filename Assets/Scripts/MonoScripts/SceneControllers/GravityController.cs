@@ -3,7 +3,7 @@ using SOs;
 using UnityEngine;
 using Utils;
 
-namespace MonoScripts
+namespace MonoScripts.SceneControllers
 {
     public class GravityController : MonoBehaviour
     {

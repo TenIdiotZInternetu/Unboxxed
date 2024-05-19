@@ -1,5 +1,6 @@
 using Cinemachine;
 using MonoScripts;
+using MonoScripts.LevelObjects;
 using SOs;
 using UnityEditor;
 

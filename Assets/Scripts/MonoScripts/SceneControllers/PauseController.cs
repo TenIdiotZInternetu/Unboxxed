@@ -1,6 +1,7 @@
+using MonoScripts.UI;
 using UnityEngine;
 
-namespace MonoScripts.Menus
+namespace MonoScripts.SceneControllers
 {
     public class PauseController : MonoBehaviour
     {

@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace MonoScripts.Menus
+namespace MonoScripts.UI
 {
     public class PauseScreen : MenuScreen
     {

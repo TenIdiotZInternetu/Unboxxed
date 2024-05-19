@@ -1,9 +1,7 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace MonoScripts.Menus
+namespace MonoScripts.UI
 {
     public class TimerUI : MonoBehaviour
 
@@ -19,11 +17,13 @@ namespace MonoScripts.Menus
         public int Milliseconds => (int)(ElapsedTime % 1000);
         public int Seconds => (int)(TotalSeconds % 60);
         public int Minutes => (int)(TotalMinutes % 60);
+        
+        public string FormattedTime => string.Format(format, Minutes, Seconds, Milliseconds);
 
         void Update()
         {
             ElapsedTime += Time.deltaTime * 1000;
-            tmpText.text = string.Format(format, Minutes, Seconds, Milliseconds);
+            tmpText.text = FormattedTime;
         }
 
         public void Reset()

@@ -1,7 +1,7 @@
 using SOs;
 using UnityEngine;
 
-namespace MonoScripts.Objects
+namespace MonoScripts.LevelObjects
 {
     public class Warp : MonoBehaviour
     {

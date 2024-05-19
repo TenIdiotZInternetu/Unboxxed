@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace MonoScripts
+namespace MonoScripts.LevelObjects
 {
     public class Trigger : MonoBehaviour
     {

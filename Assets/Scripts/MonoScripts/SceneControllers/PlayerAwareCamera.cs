@@ -2,7 +2,7 @@ using Cinemachine;
 using Packages.Tarodev_2D_Controller._Scripts;
 using UnityEngine;
 
-namespace MonoScripts
+namespace MonoScripts.SceneControllers
 {
     [RequireComponent(typeof(Camera))]
     [RequireComponent(typeof(CinemachineBrain))]

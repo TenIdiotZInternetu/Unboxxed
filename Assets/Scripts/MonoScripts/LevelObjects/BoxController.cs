@@ -1,12 +1,11 @@
 using System;
-using System.Collections.Generic;
 using Cinemachine;
+using MonoScripts.SceneControllers;
 using Packages.SerializableDictionary;
 using SOs;
-using UnityEditor;
 using UnityEngine;
 
-namespace MonoScripts
+namespace MonoScripts.LevelObjects
 {
     [Serializable]
     public class DirectionCameraDictionary : SerializableDictionary<GravityDirectionSo, CinemachineVirtualCamera> {}

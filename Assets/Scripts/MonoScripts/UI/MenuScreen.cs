@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace MonoScripts.Menus
+namespace MonoScripts.UI
 {
     /// <summary>
     /// A menu screen's functionality
