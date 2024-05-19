@@ -30,13 +30,13 @@ namespace MonoScripts
     
         public void PlayJumpSfx()
         {
-            if (jumpClip is null) return;
+            if (!jumpClip) return;
             sfxController.PlaySound(jumpClip);
         }
     
         public void PlayMovementSfx()
         {
-            if (movementClip is null) return;
+            if (!movementClip) return;
             sfxController.PlaySound(movementClip);
         }
 

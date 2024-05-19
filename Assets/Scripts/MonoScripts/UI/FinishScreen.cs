@@ -1,4 +1,5 @@
 using System;
+using SOs;
 using TMPro;
 using UnityEngine;
 using Utils;
@@ -24,7 +25,7 @@ namespace MonoScripts.UI
             
             if (currentLevelText is not null)
             {
-                currentLevelText.text = "Level " + LevelSelect.CurrentLevel;
+                currentLevelText.text = "Level " + LevelSelectSo.CurrentLevel;
             }
             
             if (timer is not null && finalTimeText is not null)

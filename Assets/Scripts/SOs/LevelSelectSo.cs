@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MonoScripts.UI
+namespace SOs
 {
-    public class LevelSelect : MonoBehaviour
+    [CreateAssetMenu(fileName = "LevelSelect", menuName = "SOs/LevelSelect")]
+    public class LevelSelectSo : ScriptableObject
     {
         public static int CurrentLevel { get; private set; } = 1;
         
