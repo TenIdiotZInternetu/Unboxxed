@@ -853,6 +853,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1342342015022181785, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342342015022181785, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8579902821169027521}
@@ -869,6 +873,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1342342015022181785, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342342015022181785, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadNextLevel
       objectReference: {fileID: 0}
@@ -882,6 +890,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1342342015022181785, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MonoScripts.UI.MenuScreen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342342015022181785, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: MonoScripts.UI.MenuScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1342342015022181785, guid: f805cd1c39dd29748b39fe7683e0fd16, type: 3}
