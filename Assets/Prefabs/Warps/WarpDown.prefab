@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: gravityDirection
       value: 
       objectReference: {fileID: 11400000, guid: b4dd86d3d0d176a43a69c180ebbd80fd, type: 2}
+    - target: {fileID: 651289413092402410, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 3.1415925
+      objectReference: {fileID: 0}
     - target: {fileID: 5863294019727393860, guid: 83180fc077a08604e9ab1ee5ae1f9bdb, type: 3}
       propertyPath: m_RootOrder
       value: 0
