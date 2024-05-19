@@ -19,6 +19,7 @@ namespace MonoScripts.Animations
         void Start()
         {
             _transform = transform;
+            _gravity = GravityController.FindInScene();
             _origin = _transform.position;
         }
     
