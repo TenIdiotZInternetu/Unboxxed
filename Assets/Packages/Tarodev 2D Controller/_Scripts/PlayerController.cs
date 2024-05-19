@@ -38,6 +38,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
         public Vector2 FrameInput => _frameInput.Move;
         public event Action<bool, float> GroundedChanged;
         public event Action Jumped;
+        public event Action Moved;
 
         #endregion
 
@@ -123,7 +124,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
                 _bufferedJumpUsable = true;
                 _releasedJumpEarly = false;
                 _inJump = false;
-                GroundedChanged?.Invoke(true, Mathf.Abs(_frameVelocity.y));
+                GroundedChanged?.Invoke(true, MovementSpeed);
             }
             // Left the Ground
             else if (_grounded && !groundHit)
@@ -187,6 +188,7 @@ namespace Packages.Tarodev_2D_Controller._Scripts
             else
             {
                 _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * stats.MaxSpeed, stats.Acceleration * Time.fixedDeltaTime);
+                Moved?.Invoke();
             }
         }
 
