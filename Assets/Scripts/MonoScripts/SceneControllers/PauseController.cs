@@ -1,3 +1,4 @@
+using System;
 using MonoScripts.UI;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace MonoScripts.SceneControllers
     {
         [SerializeField] PauseScreen pauseScreen;
         
-        private void Awake()
+        private void OnEnable()
         {
             pauseScreen.gameObject.SetActive(false);
             Controls.Cancel += TogglePause;
@@ -16,7 +17,6 @@ namespace MonoScripts.SceneControllers
         private void TogglePause()
         {
             bool isActive = pauseScreen.gameObject.activeSelf;
-            Debug.Log(isActive);
             
             if (isActive)
             {
@@ -26,6 +26,11 @@ namespace MonoScripts.SceneControllers
             {
                 pauseScreen.OpenMenu();
             }
+        }
+
+        private void OnDisable()
+        {
+            Controls.Cancel -= TogglePause;
         }
     }
 }
