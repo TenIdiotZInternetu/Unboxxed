@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using Utils;
@@ -11,7 +12,12 @@ namespace MonoScripts.UI
         [SerializeField] private TMP_Text bestTimeText;
         
         [SerializeField] private TMP_Text currentLevelText;
-        
+
+        private void Awake()
+        {
+            gameObject.SetActive(false);
+        }
+
         private void OnEnable()
         {
             Time.timeScale = 0;
