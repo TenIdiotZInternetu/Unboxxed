@@ -1182,9 +1182,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 5399072785900192833}
     m_Modifications:
     - target: {fileID: 3499387758761620802, guid: 5eaaad9e31bcc2b4e899591df556132a, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499387758761620802, guid: 5eaaad9e31bcc2b4e899591df556132a, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499387758761620802, guid: 5eaaad9e31bcc2b4e899591df556132a, type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1817498565}
+    - target: {fileID: 3499387758761620802, guid: 5eaaad9e31bcc2b4e899591df556132a, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3499387758761620802, guid: 5eaaad9e31bcc2b4e899591df556132a, type: 3}
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenMenu
@@ -1193,6 +1205,14 @@ PrefabInstance:
       propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MonoScripts.UI.MenuScreen, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 3499387758761620802, guid: 5eaaad9e31bcc2b4e899591df556132a, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MonoScripts.SceneControllers.SoundController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499387758761620802, guid: 5eaaad9e31bcc2b4e899591df556132a, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 030db8c16f46d2b4e8344a7e58e7a1da, type: 3}
     - target: {fileID: 3499387758761620812, guid: 5eaaad9e31bcc2b4e899591df556132a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8957,29 +8977,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: ----- UI -----
       objectReference: {fileID: 0}
+    - target: {fileID: 4075553529173444969, guid: 8e3523ae3f43f594fb4ed577d163486f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4075553529173444974, guid: 8e3523ae3f43f594fb4ed577d163486f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4075553529173444974, guid: 8e3523ae3f43f594fb4ed577d163486f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4075553529173444974, guid: 8e3523ae3f43f594fb4ed577d163486f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4075553529173444974, guid: 8e3523ae3f43f594fb4ed577d163486f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4075553529173444974, guid: 8e3523ae3f43f594fb4ed577d163486f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 133.6545
       objectReference: {fileID: 0}
     - target: {fileID: 4075553529173444974, guid: 8e3523ae3f43f594fb4ed577d163486f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 5617766693232351754, guid: 8e3523ae3f43f594fb4ed577d163486f, type: 3}
       propertyPath: m_AnchorMax.y
